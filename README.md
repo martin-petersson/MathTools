@@ -10,7 +10,7 @@ Open up a terminal and go to the directory where you want to put Math Tools.
 Clone the repo:
 
 ```bash
-git clone https://github.com/martinsprojects/math-tools.git
+git clone https://github.com/martin-petersson/MathTools.git
 ```
 Inside the same directory run the interactive Python interpreter:
 

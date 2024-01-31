@@ -3,7 +3,7 @@ A math library I made to learn and explore math.
 
 ### Usage
 
-Open up a terminal and go to the directory where you want to put MathTools.
+Open up a terminal and go to the directory where you want to put Math Tools.
 
 <br>
 

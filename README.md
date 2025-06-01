@@ -19,39 +19,39 @@ $ python
 ```
 
 ```text
->>> import mathtools as mt
+>>> from mathtools import Vector, Matrix
 ```
 
 ### Define a vector
 ```python
-a = mt.Vector([x, y])
+a = Vector([x, y])
 ```
-### Adding two vectors
+#### Adding two vectors
 ```python
 a + b
 ```
-### Multiply vector by scalar
+#### Multiply vector by scalar
 ```python
 a * 0.78
 ```
-### Divide vector by scalar
+#### Divide vector by scalar
 ```python
 a / 2
 ```
-### Normalize/unitize vector
+#### Normalize/unitize vector
 ```python
 a.unit
 ```
-### Dot product of two vectors
+#### Dot product of two vectors
 ```python
 a.dot(b)
 ```
-### Cross product of two 3d vectors
+#### Cross product of two 3d vectors
 ```python
 a.cross(b)
 ```
 
-### Linear interpolation between two vectors
+#### Linear interpolation between two vectors
 ```python
 t = 0.5
 a.lerp(b, t)
@@ -59,5 +59,10 @@ a.lerp(b, t)
 
 ### Define a matrix
 ```python
-m = mt.Matrix([[a, b], [c, d]])
+M = Matrix([[a, b], [c, d]])
+```
+
+#### Multiply a matrix by a vector
+```python
+M * v
 ```

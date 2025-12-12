@@ -38,6 +38,10 @@ a * 0.78
 ```python
 a / 2
 ```
+#### Length of vector
+```python
+a.len
+```
 #### Normalize/unitize vector
 ```python
 a.unit

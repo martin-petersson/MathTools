@@ -26,13 +26,14 @@ class Vector(baseClass):
 			a.append(i / other)
 		return self.__class__(a)
 
+	@property
 	def len(self):
 		vecsum = 0
 		for i in self.data:
 			vecsum += math.pow(i, 2)
 			magnitude = math.sqrt(vecsum)
-		self.data = float(magnitude)
-		return self.data
+		length = float(magnitude)
+		return length
 	
 	@property
 	def unit(self):
@@ -61,7 +62,7 @@ class Vector(baseClass):
 		return self.__class__(lerpvec)
 
 class Matrix(baseClass):
-	
+
 	# matrix times vector
 	def __mul__(self, other):
 		vecbuffer = []

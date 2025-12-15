@@ -30,18 +30,17 @@ class Vector(baseClass):
 	def len(self):
 		vecsum = 0
 		for i in self.data:
-			vecsum += math.pow(i, 2)
-			magnitude = math.sqrt(vecsum)
-		length = float(magnitude)
+			vecsum += i**2
+		length = float(math.sqrt(vecsum))
 		return length
 	
 	@property
 	def unit(self):
 		vecsum = 0
 		unitvec = []
-		for i in self.data:
-			vecsum += math.pow(i, 2)
-		veclen = math.sqrt(vecsum)
+		veclen = self.len
+		if veclen == 0:
+			raise ValueError('Cannot unitize a zero vector')
 		for i in self.data:
 			unitvec.append(i / veclen)
 		return self.__class__(unitvec)

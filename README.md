@@ -66,7 +66,47 @@ a.lerp(b, t)
 M = Matrix([[a, b], [c, d]])
 ```
 
+#### Return size of matrix
+```python
+M.size
+```
+
 #### Multiply a matrix by a vector
 ```python
-M * v
+M @ v
+```
+
+#### Multiply a matrix by a matrix
+```python
+M @ A
+```
+
+#### Hadamard product of two matrices
+```python
+M * A
+```
+
+#### Multiply every element of matrix by scalar
+```python
+M * 5
+```
+
+#### Transpose matrix
+```python
+M.transpose
+```
+
+#### Row vector (matrix)
+```python
+rowvec = v.row
+```
+
+#### Column vector (matrix)
+```python
+colvec = v.col
+```
+
+#### Matrix to vector
+```python
+colvec.to_vector
 ```

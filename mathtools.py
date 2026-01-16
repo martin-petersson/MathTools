@@ -82,6 +82,7 @@ class Vector(baseClass):
 		length = float(math.sqrt(vecsum))
 		return length
 	
+	# Euclidean distance
 	def distance(self, other):
 		match (self, other):
 			case (Vector(), Vector()):
@@ -145,7 +146,29 @@ class Vector(baseClass):
 
 
 class Matrix(baseClass):
-	
+
+	# matrix addition
+	def __add__(self, other):
+		matrixsum = []
+		mrow = []
+		for n in range(len(self.data)):
+			for m in range(len(self.data[0])):
+				mrow.append(self.data[n][m] + other.data[n][m])
+			matrixsum.append(mrow)
+			mrow = []
+		return self.__class__(matrixsum)
+
+	# matrix subtraction
+	def __sub__(self, other):
+		matrixdiff = []
+		mrow = []
+		for n in range(len(self.data)):
+			for m in range(len(self.data[0])):
+				mrow.append(self.data[n][m] - other.data[n][m])
+			matrixdiff.append(mrow)
+			mrow = []
+		return self.__class__(matrixdiff)
+
 	def __mul__(self, other):
 		match (self, other):
 			# matrix times scalar

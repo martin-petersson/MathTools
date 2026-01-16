@@ -77,9 +77,14 @@ M = Matrix([[a, b], [c, d]])
 M.size
 ```
 
-#### Multiply a matrix by a vector
+#### Add a matrix to a matrix
 ```python
-M @ v
+M + A
+```
+
+#### Subtract a matrix from a matrix
+```python
+M - A
 ```
 
 #### Multiply a matrix by a matrix

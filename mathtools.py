@@ -82,6 +82,22 @@ class Vector(baseClass):
 		length = float(math.sqrt(vecsum))
 		return length
 	
+	def distance(self, other):
+		match (self, other):
+			case (Vector(), Vector()):
+				if len(self.data) == len(other.data):
+					vecsum = 0
+					for i in range(len(self.data)):
+						a = self.data[i]
+						b = other.data[i]
+						vecsum += (a - b)**2
+					distance = float(math.sqrt(vecsum))
+				else:
+					raise ValueError('Vectors have to be the same number of components')
+			case (Vector(), Matrix()):
+				raise ValueError('Euclidean distance only works between two vectors')
+		return distance
+
 	# normalize vector
 	@property
 	def unit(self):

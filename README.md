@@ -42,6 +42,12 @@ a / 2
 ```python
 a.len
 ```
+
+#### Euclidean distance
+```python
+a.distance(b)
+```
+
 #### Normalize/unitize vector
 ```python
 a.unit

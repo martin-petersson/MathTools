@@ -1,3 +1,5 @@
+<img src="docs/cart.svg">
+
 # MathTools
 A math library I made to learn and explore math.
 
@@ -26,6 +28,18 @@ $ python
 ```python
 a = Vector([x, y])
 ```
+
+#### Set scalar value of vector component
+For components x, y, z and w.
+```python
+a.y = 10
+```
+
+#### Return size of vector
+```python
+a.size
+```
+
 #### Adding two vectors
 ```python
 a + b

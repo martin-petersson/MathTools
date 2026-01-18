@@ -48,6 +48,38 @@ class baseClass:
 
 
 class Vector(baseClass):
+	@property
+	def x(self):
+		return self.data[0]
+
+	@x.setter
+	def x(self, value):
+		self.data[0] = value
+
+	@property
+	def y(self):
+		return self.data[1]
+
+	@y.setter
+	def y(self, value):
+		self.data[1] = value
+
+	@property
+	def z(self):
+		return self.data[2]
+
+	@z.setter
+	def z(self, value):
+		self.data[2] = value
+
+	@property
+	def w(self):
+		return self.data[3]
+
+	@w.setter
+	def w(self, value):
+		self.data[3] = value
+
 	# addition
 	def __add__(self, other):
 		return self.__class__([a + b for a, b in zip(self.data, other.data)])
@@ -87,16 +119,12 @@ class Vector(baseClass):
 		match (self, other):
 			case (Vector(), Vector()):
 				if len(self.data) == len(other.data):
-					vecsum = 0
-					for i in range(len(self.data)):
-						a = self.data[i]
-						b = other.data[i]
-						vecsum += (a - b)**2
-					distance = float(math.sqrt(vecsum))
+					vecdiff = self - other
+					distance = vecdiff.len
 				else:
 					raise ValueError('Vectors have to be the same number of components')
 			case (Vector(), Matrix()):
-				raise ValueError('Euclidean distance only works between two vectors')
+				raise ValueError('Euclidean distance only works between two vectors')	
 		return distance
 
 	# normalize vector

@@ -7,6 +7,39 @@ class baseClass:
 	def __repr__(self):
 		return self.__class__.__name__+'('+repr(self.data)+')'
 
+	# vector and matrix addition
+	def __add__(self, other):
+		match (self, other):
+			case (Vector(), Vector()):
+				return self.__class__([a + b for a, b in zip(self.data, other.data)])
+			case (Matrix(), Matrix()):
+				matrixsum = []
+				mrow = []
+				for n in range(len(self.data)):
+					for m in range(len(self.data[0])):
+						mrow.append(self.data[n][m] + other.data[n][m])
+					matrixsum.append(mrow)
+					mrow = []
+				return self.__class__(matrixsum)
+			case (Matrix(), Vector()):
+				matrixsum = []
+				mrow = []
+				for n in range(len(self.data)):
+					for m in range(len(self.data[0])):
+						mrow.append(self.data[n][m]+ other.data[m])
+					matrixsum.append(mrow)
+					mrow = []
+				return self.__class__(matrixsum)
+			case (Vector(), Matrix()):
+				matrixsum = []
+				mrow = []
+				for n in range(len(other.data)):
+					for m in range(len(other.data[0])):
+						mrow.append(other.data[n][m]+ self.data[m])
+					matrixsum.append(mrow)
+					mrow = []
+				return self.__class__(matrixsum)
+
 	def __matmul__(self, other):
 		match (self, other):
 			# matrix times vector
@@ -79,10 +112,6 @@ class Vector(baseClass):
 	@w.setter
 	def w(self, value):
 		self.data[3] = value
-
-	# addition
-	def __add__(self, other):
-		return self.__class__([a + b for a, b in zip(self.data, other.data)])
 	
 	# subtraction
 	def __sub__(self, other):
@@ -174,18 +203,6 @@ class Vector(baseClass):
 
 
 class Matrix(baseClass):
-
-	# matrix addition
-	def __add__(self, other):
-		matrixsum = []
-		mrow = []
-		for n in range(len(self.data)):
-			for m in range(len(self.data[0])):
-				mrow.append(self.data[n][m] + other.data[n][m])
-			matrixsum.append(mrow)
-			mrow = []
-		return self.__class__(matrixsum)
-
 	# matrix subtraction
 	def __sub__(self, other):
 		matrixdiff = []

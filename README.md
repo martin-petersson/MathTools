@@ -1,6 +1,6 @@
+# MathTools
 <img src="docs/cart.svg">
 
-# MathTools
 A math library I made to learn and explore math.
 
 ### Usage

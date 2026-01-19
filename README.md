@@ -96,9 +96,19 @@ M.size
 M + A
 ```
 
+#### Add a vector to a matrix
+```python
+v + M
+```
+
 #### Subtract a matrix from a matrix
 ```python
 M - A
+```
+
+#### Multiply a matrix by a vector
+```python
+M @ v
 ```
 
 #### Multiply a matrix by a matrix

@@ -242,6 +242,22 @@ class Matrix(baseClass):
 			case (Matrix(), Vector()):
 				raise ValueError('Hadamard product requires matrices to be of the same size')
 
+	# return identity matrix of size n
+	def identity(n):
+		identity = []
+		mrow = []
+		diagonal = 0
+		for m in range(n):
+			for i in range(n):
+				if diagonal == i:
+					mrow.append(1)
+				else:
+					mrow.append(0)
+			diagonal += 1
+			identity.append(mrow)
+			mrow = []
+		return Matrix(identity)
+
 	# matrix size
 	@property
 	def size(self):

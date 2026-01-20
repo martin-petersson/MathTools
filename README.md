@@ -86,6 +86,11 @@ a.lerp(b, t)
 M = Matrix([[a, b], [c, d]])
 ```
 
+#### Create identity matrix of size n
+```python
+I = Matrix.identity(n)
+```
+
 #### Return size of matrix
 ```python
 M.size

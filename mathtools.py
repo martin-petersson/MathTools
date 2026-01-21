@@ -119,14 +119,23 @@ class Vector(baseClass):
 
 	# multiplication
 	def __mul__(self, other):
+		# Multiply vector by scalar
 		match (self, other):
 			case (Vector(), int() | float()) | (int() | float(), Vector()):
-				print("vafan gör vi här?")
 				a = []
 				for i in self.data:
 					a.append(i * other)
 				return self.__class__(a)
-
+			# Hadamard product of two vectors
+			case (Vector(), Vector()):
+				if len(self.data) == len(other.data): # ensure vectors have equal number of components
+					a = []
+					for i in range(len(self.data)):
+						a.append(self.data[i] * other.data[i])
+					return self.__class__(a)
+				else:
+					raise ValueError('Vectors have to be the same number of components')
+					
 	# division
 	def __truediv__(self, other):
 		a = []
@@ -247,9 +256,9 @@ class Matrix(baseClass):
 		identity = []
 		mrow = []
 		diagonal = 0
-		for m in range(n):
-			for i in range(n):
-				if diagonal == i:
+		for i in range(n):
+			for j in range(n):
+				if diagonal == j:
 					mrow.append(1)
 				else:
 					mrow.append(0)

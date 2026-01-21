@@ -126,6 +126,11 @@ M @ A
 M * A
 ```
 
+#### Hadamard product of two vectors
+```python
+a * b
+```
+
 #### Multiply every element of matrix by scalar
 ```python
 M * 5

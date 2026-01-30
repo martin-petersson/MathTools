@@ -75,6 +75,11 @@ a.dot(b)
 a.cross(b)
 ```
 
+#### Angle between two vectors
+```python
+a.angle(b)
+```
+
 #### Linear interpolation between two vectors
 ```python
 t = 0.5

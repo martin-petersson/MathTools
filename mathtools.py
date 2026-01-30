@@ -188,7 +188,14 @@ class Vector(baseClass):
 		c_z = self.data[0]*other.data[1] - self.data[1] * other.data[0]
 		vector_product = [c_x, c_y, c_z]
 		return self.__class__(vector_product)
-	
+
+	def angle(self, other):
+		match (self, other):
+			case (Vector(), Vector()):
+				return math.acos(self.dot(other) / (self.len * other.len))
+			case _:
+				raise ValueError('Object must be Vector() with the same number of components')
+
 	# linear interpolation
 	def lerp(self, other, t):
 		lerpvec = (other - self) * t + self

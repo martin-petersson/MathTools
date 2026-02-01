@@ -274,6 +274,16 @@ class Matrix(baseClass):
 			mrow = []
 		return Matrix(identity)
 
+	# zero matrix
+	def zeros(m, n):
+		zero = []
+		row = []
+		for j in range(n):
+			row.append(0)
+		for i in range(m):
+			zero.append(row)
+		return Matrix(zero)
+
 	# matrix size
 	@property
 	def size(self):

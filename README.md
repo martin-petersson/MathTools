@@ -96,6 +96,11 @@ M = Matrix([[a, b], [c, d]])
 I = Matrix.identity(n)
 ```
 
+#### Create zero matrix of size m x n
+```python
+Z = Matrix.zeros(m, n)
+```
+
 #### Return size of matrix
 ```python
 M.size

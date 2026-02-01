@@ -258,6 +258,9 @@ class Matrix(baseClass):
 			case (Matrix(), Vector()):
 				raise ValueError('Hadamard product requires matrices to be of the same size')
 
+	def __rmul__(self, other):
+		return self.__mul__(other)
+
 	# return identity matrix of size n
 	def identity(n):
 		identity = []
